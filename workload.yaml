@@ -13,7 +13,8 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: docker.io/nginx:stable-alpine3.17-slim
+        image: docker.io/nginx:alpine3.18-slim
+        # image: docker.io/httpd:2.4.58-alpine
         ports:
         - containerPort: 80
           name: http
