@@ -1,0 +1,5 @@
+resources:
+  - workload.yaml
+  - service.yaml
+  - service-preview.yaml
+  
