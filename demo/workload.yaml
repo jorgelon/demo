@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: web
 spec:
+  replicas: 2
   selector:
     matchLabels:
       app: web
@@ -11,7 +12,6 @@ spec:
       labels:
         app: web
     spec:
-      replicas: 2
       containers:
         - name: web
           image: docker.io/nginx:alpine3.18-slim
