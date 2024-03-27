@@ -1,4 +1,5 @@
 namespace: demo
 resources:
+  - ingress.yaml
   - service.yaml
   - workload.yaml
