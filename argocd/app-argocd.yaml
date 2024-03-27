@@ -8,7 +8,7 @@ spec:
     namespace: argocd
     server: 'https://kubernetes.default.svc'
   source:
-    path: demo
+    path: argocd
     repoURL: 'https://github.com/jorgelon/demo.git'
     targetRevision: main
   sources: []
