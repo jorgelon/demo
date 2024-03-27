@@ -11,7 +11,6 @@ spec:
     path: demo
     repoURL: 'https://github.com/jorgelon/demo.git'
     targetRevision: main
-  sources: []
   project: default
   syncPolicy:
     syncOptions:
