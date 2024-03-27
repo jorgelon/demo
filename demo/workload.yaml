@@ -1,19 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx
+  name: web
 spec:
   selector:
     matchLabels:
-      app: nginx
+      app: web
   template:
     metadata:
       labels:
-        app: nginx
+        app: web
     spec:
+      replicas: 2
       containers:
-      - name: nginx
-        image: docker.io/nginx:alpine3.18-slim
-        ports:
-        - containerPort: 80
-          name: http
+        - name: web
+          image: docker.io/nginx:alpine3.18-slim
+          ports:
+            - containerPort: 80
+              name: http
