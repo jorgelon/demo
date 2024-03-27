@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argo-rollouts
+spec:
+  destination:
+    name: ''
+    namespace: argo-rollouts
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: argo-rollouts
+    repoURL: 'https://github.com/jorgelon/demo.git'
+    targetRevision: main
+  sources: []
+  project: default
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true

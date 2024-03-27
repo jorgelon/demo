@@ -1,0 +1,7 @@
+namespace: argocd
+resources:
+  - https://raw.githubusercontent.com/argoproj/argo-cd/master/manifests/core-install.yaml
+  - app-argo-rollouts.yaml
+  - app-argocd.yaml
+  - app-demo.yaml
+  - repo.yaml
