@@ -1,3 +1,4 @@
+namespace: demo
 resources:
   - service.yaml
   - workload.yaml
