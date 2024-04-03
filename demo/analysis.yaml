@@ -1,19 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AnalysisTemplate
 metadata:
-  name: success-rate
+  name: job
 spec:
   args:
     - name: service-name
   metrics:
-    - name: test
+    - name: job
       provider:
         job:
-          metadata:
-            annotations:
-              foo: bar # annotations defined here will be copied to the Job object
-            labels:
-              foo: bar # labels defined here will be copied to the Job object
           spec:
             backoffLimit: 1
             template:
