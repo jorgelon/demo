@@ -4,5 +4,6 @@ resources:
   - service.yaml
   - deployment.yaml
   # Argo rollouts
-  - rollout.yaml
-  - service-preview.yaml
+  # - analysis.yaml
+  # - rollout.yaml
+  # - service-preview.yaml
