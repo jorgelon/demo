@@ -1,0 +1,51 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: demo
+spec:
+  # Number of desired pods.
+  # Defaults to 1.
+  replicas: 3
+  workloadRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: demo
+
+  strategy:
+    blueGreen:
+      # Active
+      activeService: web
+      activeMetadata:
+        labels:
+          role: active
+      # Preview
+      previewService: web-preview
+      previewMetadata:
+        labels:
+          role: preview
+      # previewReplicaCount: 1
+
+      # Analisis
+      prePromotionAnalysis:
+        templates:
+          - templateName: success-rate
+        args:
+          - name: service-name
+            value: guestbook-svc.default.svc.cluster.local
+
+      postPromotionAnalysis:
+        templates:
+          - templateName: success-rate
+        args:
+          - name: service-name
+            value: guestbook-svc.default.svc.cluster.local
+
+      autoPromotionEnabled: false
+      autoPromotionSeconds: 30
+      scaleDownDelaySeconds: 30
+      scaleDownDelayRevisionLimit: 2
+      abortScaleDownDelaySeconds: 30
+      antiAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution: {}
+        preferredDuringSchedulingIgnoredDuringExecution:
+          weight: 1 # Between 1 - 100
