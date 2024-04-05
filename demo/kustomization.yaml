@@ -2,9 +2,6 @@ namespace: demo
 resources:
   - ingress.yaml
   - service.yaml
-  - deployment.yaml
-  # Argo rollouts
-  # - analysis.yaml
-  - rollout.yaml
-  - service-preview.yaml
-  - ingress-preview.yaml
+  - workload.yaml
+  # - service-preview.yaml
+  # - ingress-preview.yaml

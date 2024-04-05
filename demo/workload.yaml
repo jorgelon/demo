@@ -1,8 +1,11 @@
 apiVersion: apps/v1
 kind: Deployment
+# apiVersion: argoproj.io/v1alpha1
+# kind: Rollout
 metadata:
   name: web
 spec:
+  replicas: 3
   selector:
     matchLabels:
       app: web
@@ -18,3 +21,7 @@ spec:
           ports:
             - containerPort: 80
               name: http
+  # strategy:
+  #   blueGreen:
+  #     activeService: web
+  #     previewService: web-preview
