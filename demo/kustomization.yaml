@@ -1,7 +1,8 @@
 namespace: demo
 resources:
-  - ingress-preview.yaml
   - ingress.yaml
-  - service-preview.yaml
   - service.yaml
   - workload.yaml
+  # Rollouts. Jope, cambia el workload
+  - service-preview.yaml
+  - ingress-preview.yaml
