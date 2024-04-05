@@ -4,14 +4,16 @@ metadata:
   name: demo
 spec:
   destination:
-    name: ''
+    name: ""
     namespace: demo
-    server: 'https://kubernetes.default.svc'
+    server: "https://kubernetes.default.svc"
   source:
     path: demo
-    repoURL: 'https://github.com/jorgelon/demo.git'
+    repoURL: "https://github.com/jorgelon/demo.git"
     targetRevision: main
   project: default
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
+    automated:
+      prune: true
