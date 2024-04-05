@@ -26,4 +26,22 @@ spec:
       activeService: web
       previewService: web-preview
       autoPromotionEnabled: false
+      activeMetadata:
+        labels:
+          role: active
+      previewMetadata:
+        labels:
+          role: preview
       # previewReplicaCount: 1
+      prePromotionAnalysis:
+        templates:
+          - templateName: job
+        args:
+          - name: service-name
+            value: web-preview.demo.svc.cluster.local
+      postPromotionAnalysis:
+        templates:
+          - templateName: job
+        args:
+          - name: service-name
+            value: web.demo.svc.cluster.local

@@ -15,7 +15,6 @@ spec:
               spec:
                 containers:
                   - name: test
-                    image: my-image:latest
-                    command:
-                      [my-test-script, my-service.default.svc.cluster.local]
+                    image: docker.io/chainguard/curl
+                    command: [curl, -fSL, "{{ args.service-name }}"]
                 restartPolicy: Never
