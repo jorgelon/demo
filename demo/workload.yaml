@@ -25,14 +25,14 @@ spec:
     blueGreen:
       activeService: web
       previewService: web-preview
-      autoPromotionEnabled: false
+      autoPromotionEnabled: true # ojo
       activeMetadata:
         labels:
           role: active
       previewMetadata:
         labels:
           role: preview
-      # previewReplicaCount: 1
+      previewReplicaCount: 1
       prePromotionAnalysis:
         templates:
           - templateName: job
