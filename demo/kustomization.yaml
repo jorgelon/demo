@@ -4,6 +4,6 @@ resources:
   - service.yaml
   - workload.yaml
   # Rollouts. Jope, cambia el workload
-  # - service-preview.yaml
-  # - ingress-preview.yaml
-  # - analysis.yaml
+  - service-preview.yaml
+  - ingress-preview.yaml
+  - analysis.yaml
