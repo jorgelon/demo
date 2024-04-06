@@ -27,15 +27,15 @@ spec:
       previewService: web-preview
       autoPromotionEnabled: false # ojo
       previewReplicaCount: 1
-  #     prePromotionAnalysis:
-  #       templates:
-  #         - templateName: job
-  #       args:
-  #         - name: service-name
-  #           value: web-preview.demo.svc.cluster.local
-  #     postPromotionAnalysis:
-  #       templates:
-  #         - templateName: job
-  #       args:
-  #         - name: service-name
-  #           value: web.demo.svc.cluster.local
+      prePromotionAnalysis:
+        templates:
+          - templateName: job
+        args:
+          - name: service-name
+            value: web-preview.demo.svc.cluster.local
+      postPromotionAnalysis:
+        templates:
+          - templateName: job
+        args:
+          - name: service-name
+            value: web.demo.svc.cluster.local
